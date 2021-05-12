@@ -12,7 +12,7 @@ _G.AutoChest = true
 -- Webhook --
 _G.Webhook = { -- sometime it's broken
     Enabled = true, -- true/false
-    webhookLink = 'https://discord.com/api/webhooks/841864107774443530/NnUO9n-mJauuchbMu2IjJDnBi5cWDl4oLHLNb1-gxFINzdMae_oeCAbs4ah3CYHV7Diz',
+    webhookLink = 'https://discord.com/api/webhooks/',
     PingForRarity = {
         ['Common'] = true,
         ['Rare'] = true, 
