@@ -1,39 +1,60 @@
--- if you lag it's not script it's obfuscator make the script lag
--- Dungeon Setting --
-_G.AutoDungeon = true -- auto choose dungeon and difficulty (not support Monolith Boss yet)
-_G.Dungeon = "Ancient Jungle" -- Ancient Jungle,Coral Kingdom,Crystal Cave,Sacred Sands,Candy Land,Sinister Sewers,Magical Mushrooms,Space Base,Daring Dojo,Cryptic Castle,Santa's Workshop,Ice Palace,Frenzy Factory,Fiery Fortress, Danger Depths, Poison Prison,
-_G.Difficulty = 'Easy' -- Easy,Medium,Hard,Demon,Impossible
-_G.GameMode = 'Classic' -- Classic,Uncapped,Endless,Endless Uncapped,Minibosses
-_G.Privacy = 'Solo' --Solo,Friends
-
--- Misc --
-_G.Instakill = true -- it make your game lag and sometime it will break the game
-
-_G.DestroyMap = true
-_G.AutoMedKit = true
+_G.Instakill = true -- Make your game lag a lot (false = normal farming)
+_G.DestroyMap = false
+_G.AutoMedKit = false
 _G.AutoChest = true
+_G.AutoCollectDaily = true
 
--- Webhook --
-_G.Webhook = { -- sometime it's broken (when using Instakill in "Endless/Endless Uncapped" gamemode)
-    Enabled = false, -- true/false
-    webhookLink = 'https://discord.com/api/webhooks/',
-    PingForRarity = {
-        ['Common'] = false,
-        ['Rare'] = true, 
-        ['Legendary'] = true, 
-        ['Mythical'] = true, 
-        ['Ultimate'] = true 
+-- Setting --
+_G.Setting = {
+    AutoSelectHighest = { -- Auto select the hightest dungeon (not support Monolith Boss yet)
+        Enabled = true,
+        GameMode = 'Classic' -- Classic,Uncapped,Endless,Endless Uncapped,Minibosses
     },
-}
 
--- Auto Sell --
-_G.AutoSell = { -- be careful with this shit autosell
-    Enabled = false, -- true/false
-    ['Common'] = true, 
-    ['Rare'] = false, 
-    ['Legendary'] = false, 
-    ['Mythical'] = false, 
-    ['Ultimate'] = false
-}
+    CustomDungeon = {
+        Enabled = false,
+        Dungeon = "Ancient Jungle", -- Ancient Jungle,Coral Kingdom,Crystal Cave,Sacred Sands,Candy Land,Sinister Sewers,Magical Mushrooms,Space Base,Daring Dojo,Cryptic Castle,Santa's Workshop,Ice Palace,Frenzy Factory,Fiery Fortress, Danger Depths, Poison Prison,
+        Difficulty = 'Easy', -- Easy,Medium,Hard,Demon,Impossible
+        GameMode = 'Classic' -- Classic,Uncapped,Endless,Endless Uncapped,Minibosses
+    },
 
--- AutoUpgrade, AutoEquip ?
+    WaitForJoiners = { -- When you play with your friends
+        Enabled = false,
+        Host = "Account1",
+        Joiners = {
+            "Account2","Account3"
+        }
+    }
+    
+    AutoLeave = { -- (For Endless Uncapped only)
+        LeaveDungeon = { -- Leave when you die or you can play in the next dungeon
+            Enabled = false,
+            WaitTime = 3
+        }
+        InventoryFull = { -- Leave when your inventory is full
+            Enabled = false,
+            WaitTime = 3
+        }
+    }
+        
+    Webhook = { -- sometime it seems broken (when using Instakill in "Endless Uncapped" gamemode)
+        Enabled = true, -- true/false
+        webhookLink = 'https://discord.com/api/webhooks/842058487529865266/S6RxHlMGJ93hGmyEh__FXkU5mjL9OSSMdaakfEw0mJbp7wHdLn68gKyAObbewpBuoSAa',
+        PingForRarity = {
+            ['Common'] = false,
+            ['Rare'] = false,
+            ['Legendary'] = true,
+            ['Mythical'] = true,
+            ['Ultimate'] = true
+        },
+    }
+    
+    AutoSell = { -- be careful with this shit autosell
+        Enabled = true, -- true/false
+        ['Common'] = true, 
+        ['Rare'] = true, 
+        ['Legendary'] = false, 
+        ['Mythical'] = false, 
+        ['Ultimate'] = false
+    }
+}
