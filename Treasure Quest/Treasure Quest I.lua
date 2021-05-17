@@ -10,20 +10,24 @@ _G.AutoChest = true
 -- Auto Upgrade, AutoEquip? 
 _G.Setting = {
     AutoSelectHighest = { -- Auto select the hightest dungeon (not support Monolith Boss yet)
-        Enabled = true, -- true/false
+        Enabled = false, -- true/false
         GameMode = 'Classic' -- Classic,Uncapped,Endless,Endless Uncapped,Minibosses
     },
 
     CustomDungeon = {
-        Enabled = false, -- true/fase
-        Dungeon = "Ancient Jungle", -- Ancient Jungle,Coral Kingdom,Crystal Cave,Sacred Sands,Candy Land,Sinister Sewers,Magical Mushrooms,Space Base,Daring Dojo,Cryptic Castle,Santa's Workshop,Ice Palace,Frenzy Factory,Fiery Fortress, Danger Depths, Poison Prison,
-        Difficulty = 'Easy', -- Easy,Medium,Hard,Demon,Impossible
-        GameMode = 'Classic' -- Classic,Uncapped,Endless,Endless Uncapped,Minibosses
+        Enabled = true, -- true/fase 
+        Dungeon = "Monolith Boss", -- Monolith Boss, Ancient Jungle,Coral Kingdom,Crystal Cave,Sacred Sands,Candy Land,Sinister Sewers,Magical Mushrooms,Space Base,Daring Dojo,Cryptic Castle,Santa's Workshop,Ice Palace,Frenzy Factory,Fiery Fortress, Danger Depths, Poison Prison,
+        Difficulty = 'Impossible', -- Easy,Medium,Hard,Demon,Impossible
+        GameMode = 'Solo Endless' -- Classic,Uncapped,Endless,Endless Uncapped,Minibosses (Monolith Boss: Classic, Solo Endless)
     },
 
-    AutoLeave = {
-		NextDungeon = { -- Leave when you can play in the next dungeon (For "Endless Uncapped" gamemode only)
-		    Enabled = true,
+    AutoLeave = { -- sometime it seems bug who care it's free scrpit
+		NextDungeon = { -- Leave when you can play in the next dungeon (For gamemode:"Endless Uncapped", "Solo Endless" only)
+		    Enabled = false,
+            WaitTime = 3
+		},
+		InventoryFull = { -- Leave the dungeon when your Inventory is full (For gamemode:"Endless Uncapped", "Solo Endless" only)
+			Enabled = true,
             WaitTime = 3
 		},
 		BackToLobby = { -- Leave the dungeon when you die
@@ -33,7 +37,7 @@ _G.Setting = {
     },
     
     AutoSell = { -- be careful with this shit autosell
-        Enabled = false, 
+        Enabled = true, 
         ['Common'] = true,  --  green 
         ['Rare'] = false,  -- blue 
         ['Legendary'] = false, -- red
@@ -43,11 +47,11 @@ _G.Setting = {
 	
 	Webhook = { -- sometime it seems broken (when using Instakill in "Endless Uncapped" gamemode)
         Enabled = false, -- true/false
-        webhookLink = 'https://discord.com/api/webhooks/842058487529865266/',
+        webhookLink = '',
         PingForRarity = {
             ['Common'] = false,
             ['Rare'] = false,
-            ['Legendary'] = true,
+            ['Legendary'] = false,
             ['Mythical'] = true,
             ['Ultimate'] = true
         },
