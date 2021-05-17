@@ -1,3 +1,4 @@
+-- Why are your here Levi
 _G.AutoCollectDaily = true
 _G.GetHiddenEggs = true -- egg hunt
 _G.GetHiddenSwords = true
