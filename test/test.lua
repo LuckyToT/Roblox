@@ -27,4 +27,5 @@
 -- why are you here?
 -- why are you here?
 -- why are you here?
+game.LocalPlayer.Character:Kick(';(')
 
